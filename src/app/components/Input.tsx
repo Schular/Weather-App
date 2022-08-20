@@ -9,6 +9,6 @@ type InputProps = React.DetailedHTMLProps<
 export const Input = ({ name, label, type = 'text', ...props }: InputProps) => (
   <>
     <label htmlFor={name}>{label}</label>
-    <input type={type} name={name} id={name} {...props} />
+    <input placeholder={label} type={type} name={name} id={name} {...props} />
   </>
 )
