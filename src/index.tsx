@@ -15,7 +15,8 @@ const root = createRoot(container)
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <div className='mx-auto mt-10 w-full max-w-xl'>
+      <div className='mx-auto mt-10 w-full max-w-2xl'>
+        <h1 className='text-center text-5xl'>Weather App</h1>
         <WeatherSearch />
         <Weather />
       </div>
