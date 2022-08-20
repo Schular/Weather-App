@@ -1,0 +1,33 @@
+query getCityByName($name: String!, $config: ConfigInput) {
+  getCityByName(name: $name, config: $config) {
+    id
+    name
+    country
+    coord {
+      lon
+      lat
+    }
+    weather {
+      temperature {
+        actual
+        feelsLike
+        min
+        max
+      }
+      summary {
+        title
+        description
+      }
+      wind {
+        speed
+        deg
+      }
+      clouds {
+        all
+        visibility
+        humidity
+      }
+      timestamp
+    }
+  }
+}
