@@ -11,13 +11,13 @@ export const Weather = () => {
   return (
     <div>
       <WeatherLoader />
-      <div className='mx-auto mt-10 max-w-3xl'>
+      <div className='mx-auto mt-10'>
         {!weather ? (
           <WeatherInfo />
         ) : (
-          <div className='grid grid-cols-2 space-y-1'>
+          <div className='grid grid-cols-1 space-y-2 px-4 sm:grid-cols-2 sm:space-y-1'>
             <div>
-              <div className='flex w-full space-x-2'>
+              <div className='flex w-full space-x-4'>
                 <h2 className='bold text-6xl'>{weather.weather?.temperature?.actual}</h2>
                 <div className='text-sm text-gray-700'>
                   <h5>Humidity: {weather.weather?.clouds?.humidity}%</h5>
