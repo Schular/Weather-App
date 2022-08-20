@@ -18,9 +18,7 @@ export const Weather = () => {
           <div className='grid grid-cols-2 space-y-1'>
             <div>
               <div className='flex w-full space-x-2'>
-                <h2 className='bold text-6xl'>
-                  {weather.weather?.temperature?.actual?.toFixed(0)}
-                </h2>
+                <h2 className='bold text-6xl'>{weather.weather?.temperature?.actual}</h2>
                 <div className='text-sm text-gray-700'>
                   <h5>Humidity: {weather.weather?.clouds?.humidity}%</h5>
                   <h5>Wind: {weather.weather?.wind?.speed}</h5>
