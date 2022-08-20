@@ -20,8 +20,8 @@ export const Weather = () => {
         {!weather ? (
           <WeatherInfo />
         ) : (
-          <div className='grid grid-cols-1 space-y-2 px-4 sm:grid-cols-2 sm:space-y-1'>
-            <div>
+          <div className='grid grid-cols-1 space-y-2 px-4 sm:grid-cols-3 sm:space-y-1'>
+            <div className='col-span-2'>
               <div className='flex w-full items-center space-x-4'>
                 <h2 className='bold text-3xl sm:text-5xl'>
                   {`${weather.weather?.temperature?.actual} ${temperature}`}
