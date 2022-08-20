@@ -36,7 +36,7 @@ export const Weather = () => {
               </h3>
               <div className='text-lg text-gray-700'>
                 <h4>
-                  Lat {weather.coord?.lat} Lat - {weather.coord?.lon} Lon
+                  {weather.coord?.lat} Lat - {weather.coord?.lon} Lon
                 </h4>
                 <h4>{dayjs().format('dddd HH:mm')}</h4>
               </div>
