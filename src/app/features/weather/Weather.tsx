@@ -23,7 +23,7 @@ export const Weather = () => {
           <div className='grid grid-cols-1 space-y-2 px-4 sm:grid-cols-3 sm:space-y-1'>
             <div className='col-span-2'>
               <div className='flex w-full items-center space-x-4'>
-                <h2 className='bold text-3xl sm:text-5xl'>
+                <h2 className='bold text-3xl sm:text-4xl'>
                   {`${weather.weather?.temperature?.actual} ${temperature}`}
                 </h2>
                 <div className='space-y-1 text-[0.65rem] text-gray-700 sm:text-xs'>
