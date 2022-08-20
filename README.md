@@ -1,5 +1,7 @@
 # Weather Display Application
 
+[Preview here](https://schular.github.io/Weather-App/)
+
 ## Prerequisites
 
 1. [node.js (>=14)](https://nodejs.org)
