@@ -9,10 +9,12 @@ export type WeatherStatus = 'idle' | 'loading' | 'failed'
 
 export type WeatherState = {
   data?: GetCityByNameQuery
+  unit: Unit
   status: WeatherStatus
 }
 
 const initialState: WeatherState = {
+  unit: Unit.Metric,
   status: 'idle',
 }
 
@@ -33,7 +35,11 @@ export const updateWeatherAsync = createAsyncThunk('weather/fetchWeather', handl
 export const weatherSlice = createSlice({
   name: 'weather',
   initialState,
-  reducers: {},
+  reducers: {
+    modfiyUnit(state, action) {
+      state.unit = action.payload
+    },
+  },
   extraReducers: (builder) => {
     const asyncThunks = [updateWeatherAsync, updateWeatherDebouncedAsync]
 
@@ -52,7 +58,11 @@ export const weatherSlice = createSlice({
   },
 })
 
+export const { modfiyUnit } = weatherSlice.actions
+
 export const selectWeather = (state: RootState) => state.weather.data?.getCityByName
+
+export const selectUnit = (state: RootState) => state.weather.unit
 
 export const selectWeatherStatus = (state: RootState) => state.weather.status
 

@@ -4,11 +4,17 @@ import { Input } from '../../components/Input'
 import { Select } from '../../components/Select'
 import { Unit } from '../../graphql/generated'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
-import { updateWeatherAsync, updateWeatherDebouncedAsync } from './weatherSlice'
+import { useAppSelector } from '../../hooks/useAppSelector'
+import {
+  modfiyUnit,
+  selectUnit,
+  updateWeatherAsync,
+  updateWeatherDebouncedAsync,
+} from './weatherSlice'
 
 export const WeatherSearch = () => {
   const [city, setCity] = useState<string>('')
-  const [unit, setUnit] = useState<Unit>(Unit.Metric)
+  const unit = useAppSelector(selectUnit)
   const dispatch = useAppDispatch()
 
   const handleCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +27,7 @@ export const WeatherSearch = () => {
 
   const handleUnitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const eventUnit = e.target.value as Unit
-    setUnit(eventUnit)
+    dispatch(modfiyUnit(eventUnit))
 
     if (city) {
       dispatch(updateWeatherAsync({ city, unit: eventUnit }))
