@@ -35,7 +35,7 @@ export const WeatherSearch = () => {
   }
 
   return (
-    <form className='sm: mt-10 flex w-full flex-col space-y-4 px-4 sm:flex-row sm:justify-between sm:space-x-10 sm:space-y-0'>
+    <form className='mt-10 flex w-full flex-col space-y-4 px-4 sm:flex-row sm:justify-between sm:space-x-10 sm:space-y-0'>
       <div className='flex w-full flex-col space-y-1'>
         <Input label='City' name='city' value={city} onChange={handleCityChange} />
       </div>
